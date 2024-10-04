@@ -43,7 +43,7 @@ const FilterMembers = ({ members }) => {
                     <div
                         role='button'
                         onClick={() => setJoinAsFilter(!joinAsFilter)}
-                        className={cn("relative py-[5px]", head === 'join As' ? 'cursor-pointer hover:bg-zinc-200 rounded-[4px] px-[10px]' : index === 2 || index === 4 ? 'hidden md:flex' : '')} key={index}
+                        className={cn("relative py-[5px]", head === 'join As' ? 'cursor-pointer hover:bg-zinc-200 rounded-[4px] px-[10px]' : index === 1 ||index === 2 || index === 4 ? 'hidden md:flex' : '')} key={index}
                     >
                         <h2 className='flex items-center justify-between'>
                             {head}
@@ -82,7 +82,7 @@ const FilterMembers = ({ members }) => {
                         <div className="line-clamp-1">
                             {member?.fullName}
                         </div>
-                        <div className="line-clamp-1">
+                        <div className="hidden line-clamp-1 md:flex">
                             {member?.email}
                         </div>
                         <div className="hidden md:flex">
@@ -134,7 +134,7 @@ const FilterMembers = ({ members }) => {
                             </button>
                         </div>
                     </div>
-                    <div className="w-[100%] min-h-[33rem] overflow-y-auto py-[1rem] md:h-[33rem]">
+                    <div className="w-[100%] min-h-[28rem] overflow-y-auto py-[1rem] md:h-[33rem]">
                         <Member member={member} />
                     </div>
                 </div>

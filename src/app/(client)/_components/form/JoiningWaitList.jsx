@@ -90,7 +90,7 @@ const JoiningWaitList = () => {
                 </p>
             </div>
 
-            <div className='max-h-[35rem] pt-[2rem] pb-[5rem] overflow-y-auto sm:max-h-fit md:pt-0 md:pb-0'>
+            <div className='max-h-[32rem] pt-[2rem] pb-[5rem] overflow-y-auto sm:max-h-fit md:pt-0 md:pb-0'>
                 {renderStep()}
 
                 <div className="mt-[2rem]">

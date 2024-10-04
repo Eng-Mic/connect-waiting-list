@@ -43,7 +43,7 @@ const Users = () => {
             <div className="w-[100%] mx-auto relative">
                 <div className="w-full grid grid-cols-3 gap-x-[1rem] capitalize border-b-[1px] border-zinc-500 font-medium text-[14px] md:grid-cols-5 sm:gap-x-[1.5rem] md:text-[15px]">
                     {['Name', 'email', 'role', 'status']?.map((head, index) => (
-                        <h2 className={`${index === 1 ?  "md:col-span-2" : index === 2 ? 'hidden md:flex' : ''}`} key={index}>
+                        <h2 className={`${index === 1 ?  "md:col-span-2" : index === 2 || index === 3 ? 'hidden md:flex' : ''}`} key={index}>
                             {head}
                         </h2>
                     ))}
@@ -67,7 +67,7 @@ const Users = () => {
                             {user?.role}
                         </div>
                         {/* status */}
-                        <div className="line-clamp-1">
+                        <div className="hidden line-clamp-1 md:flex">
                             {user?.status}
                         </div>
                         <div className="hidden items-center gap-x-[15px] px-[15px] text-[1rem] h-full absolute top-0 right-0 bg-gradient-to-r from-zinc-100 to-zinc-300 opacity-0 group-hover/member:opacity-100 transition md:flex">

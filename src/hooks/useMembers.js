@@ -66,12 +66,12 @@ export const useCreateMember = () => {
             }
             return response.json();
         },
-        onSuccess: () => {
+        onSuccess: (data, variables) => {
             // Invalidate members query to refresh the list
             queryClient.invalidateQueries({ queryKey: ['members'] });
 
             // Update Zustand store by adding the newly created member
-            setMembers([...members, newMember]);
+            setMembers((prevMembers) => [...prevMembers, variables]);
         },
         onError: (error) => {
             console.error('Failed to create member:', error);
