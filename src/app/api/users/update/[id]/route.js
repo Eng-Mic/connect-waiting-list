@@ -1,7 +1,7 @@
 // Update user
 
 import { NextResponse } from 'next/server';
-import User from '@/lib/database/models/user';
+import User from '@/lib/database/models/user.model';
 import { connectToDatabase } from '@/lib/database/mongoose';
 import { ObjectId } from 'mongodb';
 import bcrypt from 'bcryptjs';

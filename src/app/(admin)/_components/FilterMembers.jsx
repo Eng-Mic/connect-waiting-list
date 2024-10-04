@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { BsEye, BsFillTrash3Fill } from 'react-icons/bs'
-import { IoMdArrowDropdown, IoMdCloseCircleOutline } from 'react-icons/io'
+import { IoMdArrowDropdown } from 'react-icons/io'
 import { cn } from '@/lib/utils'
 import Member from './Member'
 import { useDeleteMember } from '@/hooks/useMembers'

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import Member from '@/lib/database/models/member';
+import Member from '@/lib/database/models/member.model';
 import { connectToDatabase } from '@/lib/database/mongoose';
 import { ObjectId } from 'mongodb';
 

@@ -10,19 +10,17 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Connect. Fostering Collaboration & Synergy.",
-  description: "Creating a space where your idea matters and your investment matters.",
+  title: "Connect: Fostering Collaboration & Synergy.",
+  description: "Building a community with the right tools, resources, and network needed to turn bold ideas into impactful realities.",
   icons: {
     icon: [
       {
         media: "(prefers-color-scheme: light)",
         url: "/icon.png",
-        href: "/icon.png"
       },
       {
         media: "(prefers-color-scheme: dark)",
         url: "/icon.png",
-        href: "/icon.png",
       },
     ]
   }
