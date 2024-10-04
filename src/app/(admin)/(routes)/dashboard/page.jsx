@@ -11,9 +11,10 @@ import useMemberStore from '@/store/membersStore'
 
 
 const Dashboard = () => {
-    const { isLoading, isError, error } = useGetMembers();
+    const { isLoading, isError, error, refetchMembers  } = useGetMembers();
     const members = useMemberStore((state) => state.members);
-    const membersArray = members?.members || [];
+
+    // console.log(members)
     
     if (isError) return <p>Error: {error.message}</p>;
     return (
@@ -35,11 +36,11 @@ const Dashboard = () => {
             ) : (
                 <>
                     <div className="mt-[1.5rem]">
-                        <Stats members={membersArray} />
+                        <Stats members={members} />
                     </div>
                     <div className="mt-[3rem]">
-                        {membersArray ? (
-                            <FilterMembers members={membersArray} />
+                        {members ? (
+                            <FilterMembers members={members} />
                         ) : (
                             <div className="flex items-center justify-center">
                                 <p className='text-[15px] font-medium'>

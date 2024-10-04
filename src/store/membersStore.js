@@ -2,11 +2,13 @@ import { create } from 'zustand';
 
 // Zustand store for managing member state
 const useMemberStore = create((set) => ({
-    members: [], // Initially no members
-    setMembers: (members) => set({ members }),
+    members: [],
+    setMembers: (members) => set({ members: Array.isArray(members) ? members : [] }),
     clearMembers: () => set({ members: [] }),
     removeMember: (id) => set((state) => ({
-        members: state.members.filter(member => member.id !== id)
+        members: Array.isArray(state.members) 
+            ? state.members.filter(member => member._id !== id)
+            : []
     })),
 }));
 

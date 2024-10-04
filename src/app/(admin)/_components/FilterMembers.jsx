@@ -27,7 +27,10 @@ const FilterMembers = ({ members }) => {
             );
     const deleteAMember = (id) => {
         deleteMember(id);
+        console.log(id)
     }
+
+    // console.log({filteredMembers})
     return (
         <div className='relative'>
             {expanded ? (

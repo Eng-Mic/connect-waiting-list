@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 
 // Hook to fetch all members
 export const useGetMembers = () => {
+    const queryClient = useQueryClient();
     const setMembers = useMemberStore((state) => state.setMembers);
     const { data, isError, isLoading, error } = useQuery({
         queryKey: ['members'],
@@ -17,15 +18,24 @@ export const useGetMembers = () => {
             const data = await response.json();
             return data;
         },
+        onError: (error) => {
+            console.error('Failed to fetch members:', error);
+            toast.error('Failed to fetch members');
+        },
     });
 
     useEffect(() => {
-        if (data) {
-            setMembers(data);
+        if (data && Array.isArray(data.members)) {
+            setMembers(data.members);
         }
     }, [data, setMembers]);
 
-    return { data, isError, isLoading, error };
+    // Provide a refetch function
+    const refetchMembers = () => {
+        queryClient.invalidateQueries(['members']);
+    };
+
+    return { data, isError, isLoading, error, refetchMembers };
 };
 
 // Hook to fetch a single member by ID
@@ -123,8 +133,8 @@ export const useDeleteMember = () => {
             }
              return response.json();
         },
-        onSuccess: (data, variables) => {
-            removeMember(variables); // Update the Zustand store
+        onSuccess: (data, id) => {
+            removeMember(id); // Update the Zustand store
             queryClient.invalidateQueries({ queryKey: ['members'] });
             toast.success('Member deleted');
         },
