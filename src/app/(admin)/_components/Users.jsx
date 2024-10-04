@@ -41,7 +41,7 @@ const Users = () => {
     return (
         <>
             <div className="w-[100%] mx-auto relative">
-                <div className="w-full grid grid-cols-3 gap-x-[1rem] capitalize border-b-[1px] border-zinc-500 font-medium text-[14px] md:grid-cols-5 sm:gap-x-[1.5rem] md:text-[15px]">
+                <div className="w-full grid grid-cols-2 gap-x-[1rem] capitalize border-b-[1px] border-zinc-500 font-medium text-[14px] md:grid-cols-5 sm:gap-x-[1.5rem] md:text-[15px]">
                     {['Name', 'email', 'role', 'status']?.map((head, index) => (
                         <h2 className={`${index === 1 ?  "md:col-span-2" : index === 2 || index === 3 ? 'hidden md:flex' : ''}`} key={index}>
                             {head}
@@ -52,7 +52,7 @@ const Users = () => {
                     <div 
                         role='button'
                         onClick={() => handleOpenModal(user)}
-                        className="group/member grid grid-cols-3 gap-x-[1.5rem] border-b-[1px] border-zinc-400 font-medium text-[12px] py-[15px]  cursor-pointer hover:bg-zinc-100 transition-all ease-in-out duration-300 last:border-0 relative md:grid-cols-5 md:text-[13px]" key={user?._id}
+                        className="group/member grid grid-cols-2 gap-x-[1.5rem] border-b-[1px] border-zinc-400 font-medium text-[12px] py-[15px]  cursor-pointer hover:bg-zinc-100 transition-all ease-in-out duration-300 last:border-0 relative md:grid-cols-5 md:text-[13px]" key={user?._id}
                     >
                         {/* userName */}
                         <div className="line-clamp-1">

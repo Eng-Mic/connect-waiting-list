@@ -5,7 +5,7 @@ const Profile = () => {
     const { user } = useAuthStore();
     return (
         <>
-            <div className="w-[70%] space-y-[10px]">
+            <div className="space-y-[10px] sm:w-[70%]">
                 {/* Name */}
                 <div className="grid grid-cols-2 gap-[1rem]">
                     <p className="text-[14px] font-medium sm:text-[15px]">

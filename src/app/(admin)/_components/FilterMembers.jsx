@@ -38,7 +38,7 @@ const FilterMembers = ({ members }) => {
                     className = "fixed inset-0 bg-black opacity-40 z-20"
                 />
             ) : null}
-            <div className="grid grid-cols-3 gap-x-[1rem] capitalize border-b-[1px] border-zinc-500 font-medium text-[14px] px-[5px] md:grid-cols-5 md:gap-x-[1.5rem] md:text-[15px]">
+            <div className="grid grid-cols-2 gap-x-[1rem] capitalize border-b-[1px] border-zinc-500 font-medium text-[14px] px-[5px] md:grid-cols-5 md:gap-x-[1.5rem] md:text-[15px]">
                 {['full name', 'email', 'phone number', 'join As', 'business | org. name']?.map((head, index) => (
                     <div
                         role='button'
@@ -77,7 +77,7 @@ const FilterMembers = ({ members }) => {
                             setExpanded(true)
                             setMember(member)
                         }}
-                        className="grid grid-cols-3 gap-x-[1rem] border-b-[1px] border-zinc-400 font-medium text-[13px] py-[15px] px-[5px] cursor-pointer last:border-0 md:grid-cols-5 md:gap-x-[1.5rem] md:text-[14px]" 
+                        className="grid grid-cols-2 gap-x-[1rem] border-b-[1px] border-zinc-400 font-medium text-[13px] py-[15px] px-[5px] cursor-pointer last:border-0 md:grid-cols-5 md:gap-x-[1.5rem] md:text-[14px]" 
                     >
                         <div className="line-clamp-1">
                             {member?.fullName}
@@ -134,7 +134,7 @@ const FilterMembers = ({ members }) => {
                             </button>
                         </div>
                     </div>
-                    <div className="w-[100%] min-h-[28rem] overflow-y-auto py-[1rem] md:h-[33rem]">
+                    <div className="w-[100%] h-[42rem] overflow-y-auto py-[1rem] md:h-[33rem] bg-red-500">
                         <Member member={member} />
                     </div>
                 </div>

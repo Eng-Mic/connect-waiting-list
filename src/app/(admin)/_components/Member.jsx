@@ -46,7 +46,7 @@ const Member = ({ member }) => {
                         Business | Org. name:
                     </p>
                     <p className='text-[14px] font-medium'>
-                        {member?.businessName}
+                        {member?.nameOfBusiness}
                     </p>
                 </div>
                 <div className="flex flex-col gap-[5px]">
