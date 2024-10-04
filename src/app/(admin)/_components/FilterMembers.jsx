@@ -134,7 +134,7 @@ const FilterMembers = ({ members }) => {
                             </button>
                         </div>
                     </div>
-                    <div className="w-[100%] h-[42rem] overflow-y-auto py-[1rem] md:h-[33rem] bg-red-500">
+                    <div className="w-[100%] h-[42rem] overflow-y-auto py-[1rem] md:h-[33rem]">
                         <Member member={member} />
                     </div>
                 </div>
