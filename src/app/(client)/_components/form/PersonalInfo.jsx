@@ -170,7 +170,7 @@ const PersonalInfo = ({ formData, setFormData, nextStep }) => {
                 <div>
                     <label htmlFor='yourStory' className="flex flex-col gap-y-[5px] text-[14px] font-medium">
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 lg:text-[14px]">
-                            What's your story?
+                            What&apos;s your story?
                         </span>
                         <textarea 
                             name="yourStory" id="yourStory"

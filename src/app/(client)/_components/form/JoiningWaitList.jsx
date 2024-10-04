@@ -115,7 +115,7 @@ const JoiningWaitList = () => {
                             Thank you for joining our journey! 🎉
                         </p>
                         <p className='text-[14px] my-[10px] text-center'>
-                            We're excited to have you on board. You’re now on our waitlist and will be the first to receive exclusive updates, resources, and opportunities to engage with entrepreneurs, investors, and innovators just like you.
+                            We&apos;re excited to have you on board. You&apos;re now on our waitlist and will be the first to receive exclusive updates, resources, and opportunities to engage with entrepreneurs, investors, and innovators just like you.
                         </p>
                         <p className='text-[14px] text-center'>
                             Stay tuned for more details in your inbox, and get ready to connect, collaborate, and grow with us!
