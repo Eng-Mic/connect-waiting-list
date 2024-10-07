@@ -11,17 +11,17 @@ const Footer = () => {
             </p>
             <div className="socials flex items-center gap-3 text-zinc-500">
                 <FaWhatsapp className='text-[1rem] hover:text-zinc-800' />
-                <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/company/connect-fostering-collaboration-synergy/'>
+                <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/company/theconnect-space/'>
                     <FaLinkedin className='text-[1rem] hover:text-zinc-800' />
                 </a>
                 <a target="_blank" rel="noreferrer" href='https://www.instagram.com/theconnect_community/'>
                     <AiFillInstagram className='text-[1rem] hover:text-zinc-800' />
                 </a>
-                <AiFillYoutube className='text-[1rem] hover:text-zinc-800' />
+                {/* <AiFillYoutube className='text-[1rem] hover:text-zinc-800' /> */}
                 <a target="_blank" rel="noreferrer" href='https://x.com/TheConnect____'>
                     <FaSquareXTwitter className='text-[1rem] hover:text-zinc-800'  />
                 </a>
-                <BsFacebook className='text-[1rem] hover:text-zinc-800' />
+                {/* <BsFacebook className='text-[1rem] hover:text-zinc-800' /> */}
             </div>
         </div>
     )

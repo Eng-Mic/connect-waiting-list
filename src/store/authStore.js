@@ -16,6 +16,7 @@ const useAuthStore = create((set) => ({
         if (typeof window !== 'undefined') {
             localStorage.removeItem('user');
             set({ user: null, isAuthenticated: false });
+            window.location.href = '/login';
         }
     },
 }));

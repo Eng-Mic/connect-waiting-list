@@ -7,6 +7,7 @@ import { useLogin } from '@/hooks/useAuth'
 import useAuthStore from '@/store/authStore'
 import { useRouter } from 'next/navigation'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
+import Link from 'next/link'
 
 const Login = () => {
     const router = useRouter();
@@ -41,14 +42,16 @@ const Login = () => {
         <div>
             <div className='w-[98%] h-screen mx-auto flex justify-center items-center sm:w-[55%] lg:w-[30%]'>
                 <div className="w-full p-5 my-8 bg-zinc-100 rounded-sm flex flex-col justify-center items-center md:p-8">
-                    <Image
-                        src={ConnectLogo}
-                        alt='Connect logo'
-                        // width={1200} height={800}
-                        // sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
-                        loading="lazy"
-                        className='w-[5rem] mb-[1rem]'
-                    />
+                    <Link href='/' className="">
+                        <Image
+                            src={ConnectLogo}
+                            alt='Connect logo'
+                            // width={1200} height={800}
+                            // sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
+                            loading="lazy"
+                            className='w-[5rem] mb-[1rem]'
+                        />
+                    </Link>
                      
                     <h2 className='text-[15.5px] text-center font-medium mt-2 mb-5'>
                         Login to your account

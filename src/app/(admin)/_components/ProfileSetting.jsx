@@ -7,6 +7,7 @@ import Profile from './Profile'
 import { cn } from '@/lib/utils'
 import ManageUser from './ManageUser'
 import { useRegister } from '@/hooks/useAuth'
+import useAuthStore from '@/store/authStore'
 
 const ProfileSetting = () => {
     const [currentTab, setCurrentTab] = useState(1);
@@ -14,6 +15,7 @@ const ProfileSetting = () => {
     const [formData, setFormData] = useState([]);
 
     const { mutate: register, error } = useRegister();
+    const { user } = useAuthStore();
 
     const handleOpenModal = (user) => {
         setFormData(user);
@@ -56,7 +58,7 @@ const ProfileSetting = () => {
                                 role='button'
                                 onClick={() => setCurrentTab(index + 1)}
                                 key={index}
-                                className={cn("text-[15px] text-zinc-500 font-medium", currentTab === index + 1 && "text-zinc-800 font-semibold")}
+                                className={cn("text-[15px] text-zinc-500 font-medium", currentTab === index + 1 && "text-zinc-800 font-semibold" )}
                             >
                                 <p>
                                     {item}
@@ -65,12 +67,14 @@ const ProfileSetting = () => {
                         ))}
                     </div>
                     {/* Create new user btn */}
-                    <button 
-                        onClick={() => handleOpenModal(null)}
-                        className='text-[11px] py-[6px] px-[10px] rounded-[5px] bg-zinc-800 text-white sm:text-[12px]'
-                    >
-                        Create new user
-                    </button>
+                    {user?.status !== 'moderateAdmin' && (
+                        <button 
+                            onClick={() => handleOpenModal(null)}
+                            className='text-[11px] py-[6px] px-[10px] rounded-[5px] bg-zinc-800 text-white sm:text-[12px]'
+                        >
+                            Create new user
+                        </button>
+                    )}
                 </div>
                 
                 {/* Render current atb content */}

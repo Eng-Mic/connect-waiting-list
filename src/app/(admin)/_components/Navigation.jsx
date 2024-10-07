@@ -21,7 +21,7 @@ const Navigation = () => {
 
     const [mobileMenu, setMobileMenu] = useState(false);
 
-    const { user } = useAuthStore();
+    const { user, clearUser } = useAuthStore();
 
     const handleHover = () => {
         setIsHovered(true);
@@ -57,7 +57,7 @@ const Navigation = () => {
             </>
             <ul className={cn("items-center gap-2 text-[13px] text-zinc-700 md:flex md:w-fit", mobileMenu ? 'w-full bg-zinc-100 p-[1.5rem] flex flex-col rounded-[5px] absolute top-[3rem] right-0' : 'hidden')}>
                 {/* User */}
-                <div className='w-full flex items-center gap-x-[10px] border-b-[1px] border-zinc-300 pb-[10px] mb-[10px] px-[1rem] md:hidden'>
+                <div className='w-full flex items-center justify-center gap-x-[10px] border-b-[1px] border-zinc-300 pb-[10px] mb-[10px] px-[1rem] md:hidden'>
                     <FiUser className='text-[1.5rem]' />
                     <div>
                         <p className='text-[13px] font-medium flex items-center gap-x-[5px]'>
@@ -68,7 +68,7 @@ const Navigation = () => {
                         </p>
                     </div>
                 </div>
-                <div className="w-full flex justify-between items-center">
+                {/* <div className="w-full flex justify-between items-center">
                     <li className='flex items-center gap-2 font-medium py-[0.75rem]  text-slate-800 capitalize md:px-4'>
                         <FaListUl className='text-[1rem]' />
                         Waitlist
@@ -77,7 +77,7 @@ const Navigation = () => {
                         <MdOutlineCampaign className='text-[1.4rem]' />
                         Campaigns
                     </li>
-                    {/* Settings */}
+
                     <li className='py-[0.75rem]'>
                         <p 
                             role='button'
@@ -92,9 +92,26 @@ const Navigation = () => {
                         </p>
                         
                     </li>
-                </div>
+                </div> */}
+                <li className=''>
+                    <p 
+                        role='button'
+                        onClick={() => {
+                            setToggleProfile(true)
+                            setMobileMenu(false)
+                        }}
+                        className='flex items-center gap-2 capitalize text-zinc-600 md:hidden'
+                    >
+                        <IoMdSettings className='text-[1rem]' />
+                        Profile Settings
+                    </p>
+                    
+                </li>
                 {/* Logout */}
-                <li className='w-full flex items-center justify-center gap-x-[10px] bg-zinc-700 text-white text-[11px] py-[8px] rounded-[4px] mt-[1.5rem] md:hidden'>
+                <li 
+                    onClick={() => clearUser()}
+                    className='w-full flex items-center justify-center gap-x-[10px] bg-zinc-700 text-white text-[11px] py-[8px] rounded-[4px] mt-[1rem] md:hidden'
+                >
                     <BiLogOut className='text-[1rem]' />
                     <p>
                         Logout
@@ -147,8 +164,11 @@ const Navigation = () => {
                             </section>
                             
                             {/* Logout */}
-                            <section className='flex items-center justify-center gap-x-[10px] bg-zinc-700 text-white text-[11px] py-[8px] rounded-[4px] mt-[1.5rem]'>
-                                <BiLogOut className='text-[1rem]' />
+                            <section 
+                                onClick={() => clearUser()}
+                                className='flex items-center justify-center gap-x-[10px] bg-zinc-700 text-white text-[11px] py-[8px] rounded-[4px] mt-[1.5rem]'>
+                                <BiLogOut className='text-[1rem]' 
+                            />
                                 <p>
                                     Logout
                                 </p>

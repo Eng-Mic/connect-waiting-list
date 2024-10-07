@@ -5,7 +5,9 @@ import StepIndicators from './StepIndicators';
 import PersonalInfo from './PersonalInfo';
 import Feedback from './Feedback';
 import { useCreateMember } from '@/hooks/useMembers';
-import toast from 'react-hot-toast';
+import { FaLinkedin, FaSquareXTwitter, FaWhatsapp } from 'react-icons/fa6';
+import { AiFillInstagram, AiFillYoutube } from 'react-icons/ai';
+import { BsFacebook } from 'react-icons/bs';
 
 const JoiningWaitList = () => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -34,7 +36,6 @@ const JoiningWaitList = () => {
             setTimeout(() => {
                 setModalOpen(true);
                 resetForm();
-                // toast.success('Successfully joined the waitlist!');
             }, 4000);
         }
     };
@@ -120,6 +121,23 @@ const JoiningWaitList = () => {
                         <p className='text-[14px] text-center'>
                             Stay tuned for more details in your inbox, and get ready to connect, collaborate, and grow with us!
                         </p>
+                        <div className="w-[100%] my-[1rem] flex flex-col justify-center items-center gap-[10px]">
+                            <p className='text-[14px] font-semibold'>Please Follow Us</p>
+                            <div className="socials flex items-center gap-3 text-zinc-500">
+                                <FaWhatsapp className='text-[1rem] hover:text-zinc-800' />
+                                <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/company/theconnect-space/'>
+                                    <FaLinkedin className='text-[1rem] hover:text-zinc-800' />
+                                </a>
+                                <a target="_blank" rel="noreferrer" href='https://www.instagram.com/theconnect_community/'>
+                                    <AiFillInstagram className='text-[1rem] hover:text-zinc-800' />
+                                </a>
+                                {/* <AiFillYoutube className='text-[1rem] hover:text-zinc-800' /> */}
+                                <a target="_blank" rel="noreferrer" href='https://x.com/TheConnect____'>
+                                    <FaSquareXTwitter className='text-[1rem] hover:text-zinc-800'  />
+                                </a>
+                                {/* <BsFacebook className='text-[1rem] hover:text-zinc-800' /> */}
+                            </div>
+                        </div>
                     </div>
                 </div>
             )}

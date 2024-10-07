@@ -23,9 +23,9 @@ const Dashboard = () => {
                 <h2 className='text-[1.5rem] font-semibold'>
                     Members
                 </h2>
-                <button className='text-[12px] py-[6px] px-[10px] rounded-[5px] bg-zinc-800 text-white'>
+                {/* <button className='text-[12px] py-[6px] px-[10px] rounded-[5px] bg-zinc-800 text-white'>
                     Create campaign
-                </button>
+                </button> */}
             </div>
             {isLoading ? (
                 <div className="w-full h-screen flex items-center justify-center">
