@@ -124,7 +124,9 @@ const JoiningWaitList = () => {
                         <div className="w-[100%] my-[1rem] flex flex-col justify-center items-center gap-[10px]">
                             <p className='text-[14px] font-semibold'>Please Follow Us</p>
                             <div className="socials flex items-center gap-3 text-zinc-500">
-                                <FaWhatsapp className='text-[1rem] hover:text-zinc-800' />
+                                <a target="_blank" rel="noreferrer" href='https://chat.whatsapp.com/LUhDROrOz8LFi5QM1V8GjU'>
+                                    <FaWhatsapp className='text-[1rem] hover:text-zinc-800' />
+                                </a>
                                 <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/company/theconnect-space/'>
                                     <FaLinkedin className='text-[1rem] hover:text-zinc-800' />
                                 </a>
