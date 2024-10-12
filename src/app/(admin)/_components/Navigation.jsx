@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react'
-import ConnectLogo from '../../../public/logo.png'
+import ConnectLogo from '/public/logo.png'
 import Image from 'next/image'
 import { MdEmail, MdOutlineCampaign } from 'react-icons/md'
 import { BsBellFill } from 'react-icons/bs'

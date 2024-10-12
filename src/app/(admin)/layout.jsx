@@ -14,6 +14,7 @@ const AdminLayout = ({ children }) => {
     useEffect(() => {
         if(!isAuthenticated) {
             router.push('/login')
+            router.refresh()
         }
         else {
             router.push('/dashboard')

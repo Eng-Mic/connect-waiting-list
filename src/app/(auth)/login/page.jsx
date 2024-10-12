@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import ConnectLogo from '../../../public/logo.png'
+import ConnectLogo from '/public/logo.png'
 import { useLogin } from '@/hooks/useAuth'
 import useAuthStore from '@/store/authStore'
 import { useRouter } from 'next/navigation'
@@ -24,6 +24,7 @@ const Login = () => {
     useEffect(() => {
         if(isAuthenticated) {
             router.push('/dashboard')
+            router.refresh()
         }
     }, [isAuthenticated, router])
 

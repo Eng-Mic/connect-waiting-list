@@ -121,3 +121,45 @@ export const users = [
     status: "moderate-user"
   }
 ]
+
+
+export const entrepreneursEmailData = {
+  welcomeMsg: "We’re excited to welcome you to Connect—a community designed to fuel your entrepreneurial journey. Your ideas have the potential to change the world, and we’re here to support you every step of the way.",
+  mission: "At Connect, our mission is building a community with the right tools, resources, and networks needed to turn bold ideas into impactful realities. Whether you’re building the next big thing or seeking mentorship, Connect is here to make sure that every dream gets the chance it deserves.",
+  accessTo: [
+    'A network of investors, mentors, and fellow entrepreneurs.', 'Workshops and resources to help you grow your business.', 'Opportunities to showcase your venture to potential backers.', 'Exclusive early access to tools and events designed to accelerate your startup journey.'
+  ],
+  nextStep: "We’ll be in touch with exclusive content and resources to help you get started. In the meantime, feel free to connect with us on social media and share your story with the #ConnectCommunity.",
+  thanks: "Thank you once again for joining Connect. Together, we’re building something truly special, and we’re excited to have you with us on this journey."
+}
+
+export const investorsEmailData = {
+  welcomeMsg: "Thank you for joining Connect! As a key player in the investment world, your role is crucial in driving innovation and supporting the next generation of entrepreneurs. Together, we can create opportunities and fuel the growth of tomorrow’s biggest ideas.",
+  mission: "At Connect, our mission is building a community with the right tools, resources, and networks needed to turn bold ideas into impactful realities. Whether you’re funding the next breakthrough or looking for new ventures, Connect is here to help you find and support projects that matter.",
+  accessTo: [
+    'Opportunities to discover and support innovative startups.', 'A platform to connect with like-minded investors and industry leaders.', 'Invitations to exclusive events showcasing emerging talent and ventures.', 'Resources to stay informed on the latest market trends and opportunities.'
+  ],
+  nextStep: "Stay tuned for updates on upcoming ventures and opportunities to invest. We’ll also keep you informed about events where you can meet the next wave of innovators.",
+  thanks: "Thank you for your support. Together, we’re driving change, and we’re thrilled to have you with us."
+}
+
+export const partnersEmailData = {
+  welcomeMsg: "Welcome to Connect! We’re thrilled to have you as a partner. Together, we can collaborate to shape impactful ventures, create value, and build a stronger entrepreneurial ecosystem.",
+  mission: "At Connect, our mission is building a community with the right tools, resources, and networks needed to turn bold ideas into impactful realities. Your collaboration is key in helping us foster innovation and drive meaningful change.",
+  accessTo: [
+    'The chance to collaborate on initiatives with entrepreneurs and investors.', 'Opportunities to create value through impactful partnerships.', 'Access to resources that enhance your role in supporting innovation and growth.'
+  ],
+  nextStep: "We’ll be reaching out soon with ways to collaborate on exciting projects. Keep an eye on your inbox for opportunities to drive real impact through partnership.",
+  thanks: "We’re excited to work with you and make a lasting impact together!"
+}
+
+export const othersEmailData = {
+  welcomeMsg: "We’re excited to welcome you to the Connect community! Whether you're a supporter, educator, donor or advocate for innovation or social initiatives, your role here is vital in helping ideas or initiatives flourish and driving positive change.",
+  mission: "At Connect, our mission is building a community with the right tools, resources, and networks needed to turn bold ideas into impactful realities. We’re committed in providing a platform where everyone can contribute and succeed.",
+  accessTo: [
+    'A vibrant community of entrepreneurs, investors, and changemakers.', 'Opportunities to engage in meaningful conversations and projects.', 'Resources to stay informed about the entrepreneurial landscape and how you can contribute.'
+  ],
+  nextStep: "We’ll send regular updates about the latest trends, opportunities, and ways to contribute to the community. In the meantime, we invite you to follow us on social media and stay connected.",
+  thanks: "Thank you once again for being part of Connect. Together, we’re building a brighter future!"
+}
+

@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import Image from "next/image";
 import Link from "next/link";
-import ConnectLogo from '../../../public/logo.png'
+import ConnectLogo from '/public//logo.png'
 import { IoMdMenu } from 'react-icons/io';
 import JoiningWaitList from './form/JoiningWaitList';
 import { cn } from '@/lib/utils';
