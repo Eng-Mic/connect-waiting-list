@@ -7,7 +7,7 @@ import Feedback from './Feedback';
 import { useCreateMember } from '@/hooks/useMembers';
 import { FaLinkedin, FaSquareXTwitter, FaWhatsapp } from 'react-icons/fa6';
 import { AiFillInstagram, AiFillYoutube } from 'react-icons/ai';
-import { BsFacebook } from 'react-icons/bs';
+import { BsFacebook, BsYoutube } from 'react-icons/bs';
 
 const JoiningWaitList = () => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -74,7 +74,7 @@ const JoiningWaitList = () => {
     };
     return (
         <div className='w-[100%] relative'>
-            {modalOpen ? (
+            {!isPending ? modalOpen && (
                 <div
                     onClick={() => {
                         setModalOpen(false);
@@ -103,8 +103,8 @@ const JoiningWaitList = () => {
             </div>
 
             {/* Thank you model */}
-            {modalOpen && (
-                <div className="bg-zinc-100 rounded-[5px] p-[1rem] fixed top-[10rem] left-0 right-0 mx-auto flex flex-col items-center justify-center z-30 md:w-[37rem] md:p-[3rem]">
+            {!isPending ? modalOpen && (
+                <div className="bg-zinc-100 rounded-[5px] p-[1rem] fixed top-[6rem] left-0 right-0 mx-auto flex flex-col items-center justify-center z-30 md:w-[37rem] md:p-[3rem]">
                     <button
                         onClick={() => setModalOpen(false)}
                         className='absolute top-[1rem] right-[1.1rem] bg-zinc-200 py-[4px] px-[10px] rounded-[4px] text-[12.5px] font-medium'
@@ -115,34 +115,36 @@ const JoiningWaitList = () => {
                         <p className="text-[1.2rem] font-semibold">
                             Thank you for joining our journey! 🎉
                         </p>
-                        <p className='text-[14px] my-[10px] text-center'>
-                            We&apos;re excited to have you on board. You&apos;re now on our waitlist and will be the first to receive exclusive updates, resources, and opportunities to engage with entrepreneurs, investors, and innovators just like you.
-                        </p>
-                        <p className='text-[14px] text-center'>
-                            Stay tuned for more details in your inbox, and get ready to connect, collaborate, and grow with us!
+
+                        <p className='text-[14px] text-center mt-[1rem]'>
+                            Please check your inbox. Stay tuned for more details in your inbox, and get ready to connect, collaborate, and grow with us!
                         </p>
                         <div className="w-[100%] my-[1rem] flex flex-col justify-center items-center gap-[10px]">
-                            <p className='text-[14px] font-semibold'>Please Follow Us</p>
+                            <p className='text-[14px] font-semibold'>Please Follow Us & Share.</p>
                             <div className="socials flex items-center gap-3 text-zinc-500">
                                 <a target="_blank" rel="noreferrer" href='https://chat.whatsapp.com/LUhDROrOz8LFi5QM1V8GjU'>
-                                    <FaWhatsapp className='text-[1rem] hover:text-zinc-800' />
+                                    <FaWhatsapp className='text-[1.1rem] hover:text-zinc-800' />
                                 </a>
                                 <a target="_blank" rel="noreferrer" href='https://www.linkedin.com/company/theconnect-space/'>
-                                    <FaLinkedin className='text-[1rem] hover:text-zinc-800' />
+                                    <FaLinkedin className='text-[1.1rem] hover:text-zinc-800' />
                                 </a>
                                 <a target="_blank" rel="noreferrer" href='https://www.instagram.com/theconnect_community/'>
-                                    <AiFillInstagram className='text-[1rem] hover:text-zinc-800' />
+                                    <AiFillInstagram className='text-[1.1rem] hover:text-zinc-800' />
                                 </a>
                                 {/* <AiFillYoutube className='text-[1rem] hover:text-zinc-800' /> */}
                                 <a target="_blank" rel="noreferrer" href='https://x.com/TheConnect____'>
-                                    <FaSquareXTwitter className='text-[1rem] hover:text-zinc-800'  />
+                                    <FaSquareXTwitter className='text-[1.1rem] hover:text-zinc-800'  />
                                 </a>
+                                <a target="_blank" rel="noreferrer" href='https://www.youtube.com/@Connect_Community'>
+                                    <BsYoutube className='text-[1.1rem] hover:text-zinc-800'  />
+                                </a>
+
                                 {/* <BsFacebook className='text-[1rem] hover:text-zinc-800' /> */}
                             </div>
                         </div>
                     </div>
                 </div>
-            )}
+            ): null}
         </div>
     )
 }

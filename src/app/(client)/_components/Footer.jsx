@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsFacebook } from 'react-icons/bs'
+import { BsFacebook, BsYoutube } from 'react-icons/bs'
 import { AiFillInstagram, AiFillYoutube } from 'react-icons/ai'
 import { FaLinkedin, FaSquareXTwitter, FaWhatsapp } from "react-icons/fa6"
 
@@ -22,6 +22,9 @@ const Footer = () => {
                 {/* <AiFillYoutube className='text-[1rem] hover:text-zinc-800' /> */}
                 <a target="_blank" rel="noreferrer" href='https://x.com/TheConnect____'>
                     <FaSquareXTwitter className='text-[1rem] hover:text-zinc-800'  />
+                </a>
+                <a target="_blank" rel="noreferrer" href='https://www.youtube.com/@Connect_Community'>
+                    <BsYoutube className='text-[1.1rem] hover:text-zinc-800'  />
                 </a>
                 {/* <BsFacebook className='text-[1rem] hover:text-zinc-800' /> */}
             </div>
