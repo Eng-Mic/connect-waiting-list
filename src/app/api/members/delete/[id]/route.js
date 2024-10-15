@@ -3,6 +3,9 @@ import Member from '@/lib/database/models/member.model';
 import { connectToDatabase } from '@/lib/database/mongoose';
 import { ObjectId } from 'mongodb';
 
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
+
 export async function DELETE(request, { params }) {
     const { id } = params;
 

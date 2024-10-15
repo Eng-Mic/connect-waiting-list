@@ -10,7 +10,7 @@ export const useGetMembers = () => {
     const { data, isError, isLoading, error } = useQuery({
         queryKey: ['members'],
         queryFn: async () => {
-            const response = await fetch("/api/members");
+            const response = await fetch("/api/members", { cache: 'no-store' });
             if (!response.ok) {
                 const error = await response.json();
                 throw new Error(error.error || 'Failed to fetch members');
@@ -69,7 +69,7 @@ export const useCreateMember = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(newMember),
-            });
+            }, { cache: 'no-store' });
             if (!response.ok) {
                 const error = await response.json();
                 throw new Error(error.error || 'Failed to join waitlist');
@@ -125,7 +125,7 @@ export const useDeleteMember = () => {
         mutationFn: async (id) => {
             const response = await fetch(`/api/members/delete/${id}`, { 
                 method: 'DELETE', 
-            });
+            }, { cache: 'no-store' });
             if (!response.ok) {
                 const error = await response.json();
                 toast.error('Member deletion failed');

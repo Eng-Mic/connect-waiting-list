@@ -3,6 +3,8 @@ import { NextResponse } from 'next/server';
 import Member from "@/lib/database/models/member.model";
 import { connectToDatabase } from "@/lib/database/mongoose";
 
+export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
 
 export async function GET() {
     try {
