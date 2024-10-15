@@ -6,10 +6,13 @@ import { connectToDatabase } from "@/lib/database/mongoose";
 
 export async function GET() {
     try {
+        console.log('Starting GET request');
         await connectToDatabase();
+        console.log('Database connected');
 
         // Fetch all members
-        const members = await Member.find();
+        const members = await Member.find().read('primary');
+        console.log(`Fetched ${members.length} members`);
         return NextResponse.json({ members }, {
             status: 200,
             headers: {

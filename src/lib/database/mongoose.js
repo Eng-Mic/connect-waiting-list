@@ -30,6 +30,9 @@ export const connectToDatabase = async () => {
     const opts = {
       dbName: 'Connect_Waiting_List',
       bufferCommands: false,
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      maxPoolSize: 10, // Adjust this based on your needs
     }
     cached.promise = mongoose.connect(MONGODB_URI, opts).then(mongoose => {
       console.log('Db connected')

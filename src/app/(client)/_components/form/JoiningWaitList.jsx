@@ -30,7 +30,7 @@ const JoiningWaitList = () => {
     };
 
     const submitForm = () => {
-        console.log('Form Data:', formData);
+        // console.log('Form Data:', formData);
         joinWaitlist(formData)
         if(!isPending) {
             setTimeout(() => {
