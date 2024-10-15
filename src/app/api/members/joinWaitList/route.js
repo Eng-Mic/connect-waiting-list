@@ -28,7 +28,12 @@ export async function POST(req) {
         // Check if the member already exists by email
         const existingMember = await Member.findOne({ email });
         if (existingMember) {
-            return NextResponse.json({ error: 'Member already exists' }, { status: 400 });
+            return NextResponse.json({ error: 'Member already exists' }, {
+                status: 400,
+                headers: {
+                    'Cache-Control': 'no-store, max-age=0',
+                }
+            });
         }
 
         // Create new member
@@ -89,11 +94,26 @@ export async function POST(req) {
         const emailResponse = await transporter.sendMail(mailOptions);
 
         if (!emailResponse || emailResponse.error) {
-            return NextResponse.json({ error: 'Failed to send email', details: emailResponse.error }, { status: 500 });
+            return NextResponse.json({ error: 'Failed to send email', details: emailResponse.error }, {
+                status: 500,
+                headers: {
+                    'Cache-Control': 'no-store, max-age=0',
+                }
+            });
         }
 
-        return NextResponse.json({ message: 'Member created successfully', member: newMember, emailResponse }, { status: 201 });
+        return NextResponse.json({ message: 'Member created successfully', member: newMember, emailResponse }, {
+            status: 201,
+            headers: {
+                'Cache-Control': 'no-store, max-age=0',
+            }
+        });
     } catch (error) {
-        return NextResponse.json({ error: 'Server error', details: error.message }, { status: 500 });
+        return NextResponse.json({ error: 'Server error', details: error.message }, {
+            status: 500,
+            headers: {
+                'Cache-Control': 'no-store, max-age=0',
+            }
+        });
     }
 }

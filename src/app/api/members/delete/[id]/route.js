@@ -20,8 +20,17 @@ export async function DELETE(request, { params }) {
         if (!deletedMember) {
             return NextResponse.json({ error: 'Member not found' }, { status: 404 });
         }
-
-        return NextResponse.json({ message: 'Member deleted successfully' }, { status: 200 });
+        
+        // Return response with Cache-Control header to prevent caching
+        return NextResponse.json(
+            { message: 'Member deleted successfully' },
+            {
+                status: 200,
+                headers: {
+                    'Cache-Control': 'no-store, max-age=0' // Prevent caching
+                }
+            }
+        );
     } catch (error) {
         return NextResponse.json({ error: 'Failed to delete member' }, { status: 500 });
     }

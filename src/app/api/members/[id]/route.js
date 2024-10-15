@@ -19,8 +19,18 @@ export async function GET(request, { params })  {
       return NextResponse.json({ error: 'Member not found' }, { status: 404 });
     }
 
-    return NextResponse.json({ member }, { status: 200 });
+    return NextResponse.json({ member }, {
+      status: 200,
+      headers: {
+        'Cache-Control': 'no-store, max-age=0', // Prevent caching
+      },
+    });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch member' }, { status: 500});
+    return NextResponse.json({ error: 'Failed to fetch member' }, {
+      status: 500,
+      headers: {
+        'Cache-Control': 'no-store, max-age=0', // Prevent caching on error too
+      },
+    });
   }
 }
