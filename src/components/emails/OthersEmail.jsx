@@ -12,7 +12,7 @@ export const OthersEmail = (props) => {
             <Body style={main}>
                 <Container style={container}>
                     <Img
-                        src="https://res.cloudinary.com/du6obar6t/image/upload/v1728853394/logo_wgnw3z.png"
+                        src={process.env.NEXT_PUBLIC_CLOUDINARY_IMAGE_URL}
                         width='115'
                         height='45'
                         alt='connect.'
