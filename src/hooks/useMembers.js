@@ -133,9 +133,16 @@ export const useDeleteMember = () => {
             }
              return response.json();
         },
-        onSuccess: (data, id) => {
-            removeMember(id); // Update the Zustand store
-            queryClient.invalidateQueries({ queryKey: ['members'] });
+        onSuccess: async (data, id) => {
+            // Remove member from Zustand store
+            removeMember(id);
+            
+            // Invalidate members query and force re-fetch
+            await queryClient.invalidateQueries({ queryKey: ['members'] });
+
+            // Fetch the latest members data and update Zustand store
+            const updatedMembers = await fetch('/api/members').then(res => res.json());
+            useMemberStore.getState().setMembers(updatedMembers);
             toast.success('Member deleted');
         },
         onError: (error) => {

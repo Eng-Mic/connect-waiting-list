@@ -33,24 +33,21 @@ const Dashboard = () => {
                         <AiOutlineLoading3Quarters className='text-[1.5rem] animate-spin' />
                     </p>
                 </div>
-            ) : (
+            ) : members.length > 0 ? (
                 <>
                     <div className="mt-[1.5rem]">
                         <Stats members={members} />
                     </div>
                     <div className="mt-[3rem]">
-                        {members ? (
-                            <FilterMembers members={members} />
-                        ) : (
-                            <div className="flex items-center justify-center">
-                                <p className='text-[15px] font-medium'>
-                                    No member yet.
-                                </p>
-                            </div>
-                        )}
-                        
+                        <FilterMembers members={members} />
                     </div>
                 </>
+            ) : (
+                <div className="flex items-center justify-center h-[50vh]">
+                    <p className='text-[15px] font-medium'>
+                        No member yet.
+                    </p>
+                </div>
             )}
         </div>
     )

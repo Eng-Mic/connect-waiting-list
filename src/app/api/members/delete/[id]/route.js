@@ -15,7 +15,7 @@ export async function DELETE(request, { params }) {
         }
 
         // Find member by ID and delete
-        const deletedMember = await Member.findByIdAndDelete({_id: id});
+        const deletedMember = await Member.findByIdAndDelete(id);
 
         if (!deletedMember) {
             return NextResponse.json({ error: 'Member not found' }, { status: 404 });
