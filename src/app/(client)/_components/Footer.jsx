@@ -20,7 +20,7 @@ const Footer = () => {
                     <AiFillInstagram className='text-[1rem] hover:text-zinc-800' />
                 </a>
                 {/* <AiFillYoutube className='text-[1rem] hover:text-zinc-800' /> */}
-                <a target="_blank" rel="noreferrer" href='https://x.com/TheConnect____'>
+                <a target="_blank" rel="noreferrer" href='https://x.com/TheConnect_X'>
                     <FaSquareXTwitter className='text-[1rem] hover:text-zinc-800'  />
                 </a>
                 <a target="_blank" rel="noreferrer" href='https://www.youtube.com/@Connect_Community'>
